@@ -1,5 +1,8 @@
 def alphabetize_restaurant(filename):
-    """Restaurant rating lister."""
+    """Take in a list of restaurants and return an alphabetized list of ratings
+    
+    Take in a list and promt the user for a restaurant and rating, then return
+    a full alphabetized list of restaurant ratings."""
 
     restaurant_reviews = open(filename)
 
@@ -13,16 +16,18 @@ def alphabetize_restaurant(filename):
     for review in book_of_reviews: 
         dictionary_reviews[review[0]] = review[1]
 
-    new_restaurant = input("What is the name of your restaurant? > ")
+    new_restaurant = input("What is the name of your restaurant? > ") 
     new_rating = int(input("What is the rating of your restaurant? > "))
-    dictionary_reviews[new_restaurant] = new_rating
+     
+    dictionary_reviews[new_restaurant] = new_rating 
     
     dictionary_reviews = sorted(dictionary_reviews.items())
     
     for restaurant_name in dictionary_reviews:
         print(f"{restaurant_name[0]} is rated at {restaurant_name[1]}.")
-        
 
 alphabetize_restaurant("scores.txt")
 
+
+    
 
