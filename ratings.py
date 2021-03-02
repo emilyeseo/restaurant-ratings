@@ -1,13 +1,6 @@
-"""Restaurant rating lister."""
-
-# write a function
-# open the file 
-# iterate through each line in the text file
-# split each line into a list for each restaurant 
-# make a dictionary (key = name, value = rating)
-# return the ratings in alphabetical order  
-
 def alphabetize_restaurant(filename):
+    """Restaurant rating lister."""
+
     restaurant_reviews = open(filename)
 
     book_of_reviews = []
@@ -20,12 +13,15 @@ def alphabetize_restaurant(filename):
     for review in book_of_reviews: 
         dictionary_reviews[review[0]] = review[1]
 
+    new_restaurant = input("What is the name of your restaurant? > ")
+    new_rating = int(input("What is the rating of your restaurant? > "))
+    dictionary_reviews[new_restaurant] = new_rating
+    
     dictionary_reviews = sorted(dictionary_reviews.items())
     
     for restaurant_name in dictionary_reviews:
         print(f"{restaurant_name[0]} is rated at {restaurant_name[1]}.")
         
-
 
 alphabetize_restaurant("scores.txt")
 
